@@ -41,4 +41,22 @@ describe("thank you card", () => {
       expect(subject).toMatchSnapshot();
     });
   });
+
+  // hash is an instance method, vs class level vs
+  describe("#setCavasSize", () => {
+    it("should updates width and hegiht", () => {
+      // arrange
+      let canvas = {};
+      const width = 200;
+      const height = 300;
+
+      // act
+      // instance lets you access intance methods
+      subject.instance().setCanvasSize(canvas, width, height);
+
+      //assert
+      expect(canvas.width).toEqual(width);
+      expect(canvas.height).toEqual(height);
+    });
+  });
 });
